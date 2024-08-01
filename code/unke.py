@@ -182,7 +182,7 @@ def execute_batch_unke(
             
             layer_out_ks[i,idxs[i]]+=resid[i]
         
-        get_qwen2_causal_mask
+        
         # llama2
         if config.model_name == 'LLama2-7B-Chat':
             input_causal_mask,input_position_ids,input_cache_position = get_causal_mask(layer_in_ks,contexts_tok['attention_mask'])
