@@ -272,23 +272,30 @@ def get_llama_with_answer(que,ans):
 
 def get_llama_without_answer(que):
     return f"""<s>[INST] {que} [/INST]"""
+
+def get_llama_without_answer_cot(que):
+    return f"""<s>[INST] Please provide a multi-hop explanation for the next question: {que} [/INST] """
+
 def get_qwen_without_answer(que):
     return f"""<|im_start|>user\n{que}<|im_end|>\n<|im_start|>assistant\n"""
 
+def get_qwen_without_answer_cot(que):
+    return f"""<|im_start|>user\n Please provide a multi-hop explanation for the next question: {que}<|im_end|>\n<|im_start|>assistant\n"""
+
+def get_vicuna_without_answer(que):
+    return f"""USER: {que} ASSISTANT:"""
 
 def get_list_llama_without_answer(que, cot):
     if cot == False:
-        #L = [get_llama_sys_que(SYSTEM_PROMOT,line) for line in que]
         L = [get_llama_without_answer(line) for line in que]
     else:
         L = [get_llama_without_answer_cot(line) for line in que]
     return L
 def get_list_qwen_without_answer(que, cot):
     if cot == False:
-        #L = [get_llama_sys_que(SYSTEM_PROMOT,line) for line in que]
         L = [get_qwen_without_answer(line) for line in que]
     else:
-        L = [get_llama_without_answer_cot(line) for line in que]
+        L = [get_qwen_without_answer_cot(line) for line in que]
     return L
 
 def get_llama_without_answer_cot(que):
@@ -311,6 +318,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(config.model_path,padding_side='left')
     if config.model_name == 'LLama2-7B-Chat':
         tok.pad_token_id = tok.eos_token_id
+        tokenizer.pad_token_id = tok.eos_token_id
 
     batch_size = config.batch_size
     num_batches = len(edit_data) // batch_size + (1 if len(edit_data) % batch_size else 0)
