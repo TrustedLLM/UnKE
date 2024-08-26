@@ -12,6 +12,12 @@ UnKEBench is an unstructured knowledge editing benchmark. You can find the datas
 ./data/final_data_v2.json
 ```
 
+## Requirements
+The implementation of the causal attention mechanism is related to the version of the transformers library, so it is best to download the following version of the transformers library:
+```
+pip install transformers==4.40.1
+```
+
 ## UnKE
 UnKE is an efficient unstructured knowledge editing method. You can use it easily by following the steps below.
 
