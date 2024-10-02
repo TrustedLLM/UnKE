@@ -1,6 +1,6 @@
 # UnKE
 This is the official repo for our [paper](https://arxiv.org/abs/2405.15349): 
-> UnKE: Unstructured Knowledge Editing in Large Language Models
+> Everything is Editable: Extend Knowledge Editing to Unstructured Data in Large Language Models
 
 ## Model Architecture
 ![](https://github.com/TrustedLLM/UnKE/blob/main/overview.png)
