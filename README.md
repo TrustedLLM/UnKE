@@ -9,7 +9,7 @@ Comparison between UnKE and previous knowledge editing methods. Previous researc
 ## UnKEBench
 UnKEBench is an unstructured knowledge editing benchmark. You can find the dataset at the following path.
 ```
-./data/final_data_v2.json
+./data/final_data_v3.json
 ```
 
 ## Requirements
@@ -28,7 +28,7 @@ First, you can easily customize the editing parameters by directly modifying the
 Next you can directly run unke.py to perform the editing process.
 ```
 cd code
-python3 unke.py
+python3 unke_mmlu.py
 ```
 It will output a json file containing the final inference results on UnKEBench. The inference results are then evaluated to obtain the final metrics.
 ```
