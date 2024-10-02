@@ -34,13 +34,5 @@ It will output a json file containing the final inference results on UnKEBench. 
 ```
 python evaluate.py --file_path ../output/result.json --model_path ../model/all-MiniLM-L6-v2
 ```
-Our code is simple to use and you can easily modify it to test your ideas. If you find it helpful, please cite our paper.
-```
-@article{deng2024unke,
-  title={UnKE: Unstructured Knowledge Editing in Large Language Models},
-  author={Deng, Jingcheng and Wei, Zihao and Pang, Liang and Ding, Hanxing and Shen, Huawei and Cheng, Xueqi},
-  journal={arXiv preprint arXiv:2405.15349},
-  year={2024}
-}
-```
+
 
