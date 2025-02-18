@@ -1,9 +1,16 @@
-import openai
+import openai #0.28.0
 import time
 import concurrent.futures
 import numpy as np
 from tqdm import tqdm
 import json
+
+
+openai.api_base = ''
+
+openai.api_key = ''
+
+
 def single_run(que, ans, p, retry=5, model="gpt-4o", n=1, temperature=0.):
     for _ in range(retry):
         try:
@@ -69,6 +76,11 @@ def evaluate_results(results):
 
 with open('your_data_path.json', 'r') as file:
     data = json.load(file)
+# ignore
+# for i in data:
+#     for j_index in range(len(i['sub_question'])):
+#         i['sub_question'][j_index] = i['sub_question'][j_index].replace('<s>[INST] ', '').replace(' [/INST]', '') # remove llama2 special tokens
+
 final_results = process_data(data)
 final_score = evaluate_results(final_results)
 print(final_score)
